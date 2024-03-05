@@ -4,12 +4,16 @@
     <div class="banner">
       <h1>BarbieUI</h1>
       <h2>一个厉害的 UI 框架</h2>
-      <p class="actions"><a href="">Github</a> <a href="">开始</a></p>
+      <p class="actions">
+        <a href="https://github.com/limo-chen/BabieUI">Github</a>
+        <router-link to="/doc">开始</router-link>
+      </p>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
+
 export default {
   components: {
     Topnav,
