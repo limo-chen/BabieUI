@@ -37,16 +37,19 @@ aside {
   background: #539bf4;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
+
   > h2 {
     margin-bottom: 12px;
   }
 
   > li {
     padding: 4px 0;
+  }
+  @media (max-width: 500px) {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    padding-top: 70px;
   }
 }
 </style>
