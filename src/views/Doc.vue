@@ -73,10 +73,8 @@ aside {
     margin-bottom: 4px;
   }
 
-  > ol {
-    > li {
-      padding: 4px 0;
-    }
+  > li {
+    padding: 4px 0;
   }
 }
 main {
