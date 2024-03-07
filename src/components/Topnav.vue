@@ -26,7 +26,10 @@ export default {
   background: pink;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -44,17 +47,18 @@ export default {
   }
 
   .toggleAside {
-    display: inline-block;
+    display: none;
     width: 24px;
     height: 24px;
     background: red;
-    transform: translateY(-50%);
     display: none;
     position: absolute;
     left: 16px;
     top: 50%;
+    transform: translateY(-50%);
   }
   // 当页面宽度是500时，.menu隐藏; .logo设置为左右都是auto
+
   @media (max-width: 500px) {
     > .menu {
       display: none;
