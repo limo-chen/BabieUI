@@ -1,5 +1,5 @@
 <template>
-  <div><SwitchDemo v-model:value="y" /></div>
+  <div><SwitchDemo v-model:value="bool" /></div>
 </template>
 
 <script>
@@ -10,9 +10,9 @@ export default {
     SwitchDemo,
   },
   setup() {
-    const y = ref(false);
+    const bool = ref(false);
     return {
-      y,
+      bool,
     };
   },
 };
