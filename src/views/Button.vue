@@ -30,6 +30,11 @@
       <ButtonDemo theme="button">禁用按钮</ButtonDemo>
       <ButtonDemo theme="link">禁用按钮</ButtonDemo>
     </div>
+    <h1>示例4</h1>
+    <div>
+      <ButtonDemo loading>加载中</ButtonDemo>
+      <ButtonDemo>加载完毕</ButtonDemo>
+    </div>
   </div>
 </template>
 
