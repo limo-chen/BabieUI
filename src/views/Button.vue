@@ -24,6 +24,12 @@
       <ButtonDemo theme="text">普普通</ButtonDemo>
       <ButtonDemo size="small" theme="text">小小小</ButtonDemo>
     </div>
+    <h1>示例3</h1>
+    <div>
+      <ButtonDemo>禁用按钮</ButtonDemo>
+      <ButtonDemo theme="button">禁用按钮</ButtonDemo>
+      <ButtonDemo theme="link">禁用按钮</ButtonDemo>
+    </div>
   </div>
 </template>
 

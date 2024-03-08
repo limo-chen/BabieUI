@@ -1,6 +1,6 @@
 <template>
   <!-- 一个公共样式和一个动态class -->
-  <button class="barbie-button" :class="classes">
+  <button class="barbie-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -17,6 +17,10 @@ export default {
     size: {
       type: String,
       default: "normel",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -39,6 +43,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
+$grey: grey;
 .barbie-button {
   box-sizing: border-box;
   height: $h;
@@ -94,6 +99,22 @@ $radius: 4px;
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
+  }
+  &.barbie-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.barbie-theme-link,
+  &.barbie-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
   }
 }
 </style>
