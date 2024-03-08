@@ -49,5 +49,23 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
+  &.barbie-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.barbie-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
 }
 </style>
