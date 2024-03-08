@@ -1,17 +1,35 @@
 <template>
   <!-- 一个公共样式和一个动态class -->
-  <button class="barbie-button" :class="`barbie-theme-${theme}`">
+  <button class="barbie-button" :class="classes">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+import { computed } from "vue";
+
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normel",
+    },
+  },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`barbie-theme-${theme}`]: theme,
+        [`barbie-size-${size}`]: size,
+      };
+    });
+    return {
+      classes,
+    };
   },
 };
 </script>
@@ -66,6 +84,16 @@ $radius: 4px;
     &:focus {
       background: darken(white, 5%);
     }
+  }
+  &.barbie-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.barbie-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

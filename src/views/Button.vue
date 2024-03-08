@@ -7,6 +7,24 @@
     <ButtonDemo theme="link">你好</ButtonDemo>
     <ButtonDemo theme="text">你好</ButtonDemo>
   </div>
+  <h1>示例2</h1>
+  <div>
+    <ButtonDemo size="big">大大大</ButtonDemo>
+    <ButtonDemo>普普通</ButtonDemo>
+    <ButtonDemo size="small">小小小</ButtonDemo>
+  </div>
+  <div>
+    <div>
+      <ButtonDemo theme="link" size="big">大大大</ButtonDemo>
+      <ButtonDemo theme="link">普普通</ButtonDemo>
+      <ButtonDemo size="small" theme="link">小小小</ButtonDemo>
+    </div>
+    <div>
+      <ButtonDemo size="big" theme="text">大大大</ButtonDemo>
+      <ButtonDemo theme="text">普普通</ButtonDemo>
+      <ButtonDemo size="small" theme="text">小小小</ButtonDemo>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
