@@ -1,6 +1,12 @@
 <template>
   <div>
-    <button :class="{ checked: value }" @click="toggle"><span></span></button>
+    <button
+      class="barbie-switch"
+      :class="{ 'barbie-checked': value }"
+      @click="toggle"
+    >
+      <span></span>
+    </button>
     <div>{{ value }}</div>
   </div>
 </template>
@@ -24,7 +30,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.barbie-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -42,24 +48,23 @@ button {
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-}
-
-button.checked {
-  background: #338cff;
-  > span {
-    left: calc(100% - #{$h2} - 2px);
+  &.barbie-checked {
+    background: #338cff;
+    > span {
+      left: calc(100% - #{$h2} - 2px);
+    }
   }
-}
-
-button:active {
-  > span {
-    width: $h2 + 4px;
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
   }
-}
-button.checked:active {
-  > span {
-    width: $h2 + 4px;
-    margin-left: -4px;
+
+  &.barbie-checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <!-- 一个公共样式和一个动态class -->
-  <button class="barbie-button" :class="`theme-${theme}`">
+  <button class="barbie-button" :class="`barbie-theme-${theme}`">
     <slot />
   </button>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
