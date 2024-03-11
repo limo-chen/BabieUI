@@ -1,19 +1,19 @@
 <template>
   <template v-if="visible">
-    <div class="barbie-dialog-overlay"></div>
+    <div @click="OnClickOverlay" class="barbie-dialog-overlay"></div>
     <div class="barbie-dialog-wrapper">
       <div class="barbie-dialog">
         <header>
           标题
-          <span class="barbie-dialog-close"></span>
+          <span @click="close" class="barbie-dialog-close"></span>
         </header>
         <main>
           <p>第一行字</p>
           <p>第二行字</p>
         </main>
         <footer>
-          <ButtonDemo level="main">OK</ButtonDemo>
-          <ButtonDemo>Cancel</ButtonDemo>
+          <ButtonDemo level="main" @click="ok">OK</ButtonDemo>
+          <ButtonDemo @click="cancel">Cancel</ButtonDemo>
         </footer>
       </div>
     </div>
@@ -31,6 +31,45 @@ export default {
       type: Boolean,
       default: false,
     },
+    OnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const OnClickOverlay = () => {
+      if (props.OnClickOverlay) {
+        close();
+      }
+    };
+    //  if (props.ok && props.ok() !== false) 可缩写为 props.ok?.() !== false
+    // 意思是close不存在直接退出，如果close存在则对比返回值与false是否是不相等的，只要不是false就执行close
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close();
+      }
+    };
+
+    const cancel = () => {
+      if (props.cancel && props.cancel() !== false) {
+        close();
+      }
+    };
+    return {
+      close,
+      OnClickOverlay,
+      ok,
+      cancel,
+    };
   },
 };
 </script>
