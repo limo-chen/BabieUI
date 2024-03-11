@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div @click="OnClickOverlay" class="barbie-dialog-overlay"></div>
-    <div class="barbie-dialog-wrapper">
-      <div class="barbie-dialog">
-        <header>
-          <slot name="title" />
-          <span @click="close" class="barbie-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <ButtonDemo level="main" @click="ok">OK</ButtonDemo>
-          <ButtonDemo @click="cancel">Cancel</ButtonDemo>
-        </footer>
+    <teleport to="body">
+      <div @click="OnClickOverlay" class="barbie-dialog-overlay"></div>
+      <div class="barbie-dialog-wrapper">
+        <div class="barbie-dialog">
+          <header>
+            <slot name="title" />
+            <span @click="close" class="barbie-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <ButtonDemo level="main" @click="ok">OK</ButtonDemo>
+            <ButtonDemo @click="cancel">Cancel</ButtonDemo>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
   </template>
 </template>
 
