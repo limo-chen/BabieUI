@@ -2,7 +2,15 @@
   <div>Diolag示例</div>
   <h1>示例1</h1>
   <ButtonDemo @click="toggle">toggle Dialog</ButtonDemo>
-  <DialogDemo v-model:visible="x" :ok="f1" :cancel="f2"></DialogDemo>
+  <DialogDemo v-model:visible="x" :ok="f1" :cancel="f2">
+    <template v-slot:title>
+      <strong>提示:自定义标题</strong>
+    </template>
+    <template v-slot:content>
+      <div>你好</div>
+      <div>撒浪嘿呦</div>
+    </template>
+  </DialogDemo>
 </template>
 <script lang="ts">
 import ButtonDemo from "../lib/ButtonDemo.vue";
