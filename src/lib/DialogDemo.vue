@@ -1,27 +1,36 @@
 <template>
-  <div class="barbie-dialog-overlay"></div>
-  <div class="barbie-dialog-wrapper">
-    <div class="barbie-dialog">
-      <header>
-        标题
-        <span class="barbie-dialog-close"></span>
-      </header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <ButtonDemo level="main">OK</ButtonDemo>
-        <ButtonDemo>Cancel</ButtonDemo>
-      </footer>
+  <template v-if="visible">
+    <div class="barbie-dialog-overlay"></div>
+    <div class="barbie-dialog-wrapper">
+      <div class="barbie-dialog">
+        <header>
+          标题
+          <span class="barbie-dialog-close"></span>
+        </header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <ButtonDemo level="main">OK</ButtonDemo>
+          <ButtonDemo>Cancel</ButtonDemo>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
+
 <script lang="ts">
 import ButtonDemo from "./ButtonDemo.vue";
 export default {
   components: {
     ButtonDemo,
+  },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
