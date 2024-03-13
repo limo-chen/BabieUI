@@ -4,25 +4,28 @@
       <div
         class="barbie-tabs-nav-item"
         v-for="(t, index) in titles"
+        @click="select(t)"
+        :class="{ selected: t === selected }"
         :key="index"
       >
         {{ t }}
       </div>
     </div>
     <div class="barbie-tabs-content">
-      <component
-        class="barbie-tabs-content-item"
-        v-for="(c, index) in defaults"
-        :is="c"
-        :key="index"
-      />
+      <component class="barbie-tabs-content-item" :is="current" />
     </div>
   </div>
 </template>
 
 <script>
 import TabDemo from "./TabDemo.vue";
+import { computed } from "vue";
 export default {
+  props: {
+    selected: {
+      type: String,
+    },
+  },
   setup(props, context) {
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
@@ -30,12 +33,23 @@ export default {
         throw new Error("Tabs组件只能接收Tab作为子标签");
       }
     });
+    //filter有个特点，只返回数组，就算只有一个也只返回数组，[0]就可以取到值
+    const current = computed(() => {
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected;
+      })[0];
+    });
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
+    const select = (title) => {
+      context.emit("update:selected", title);
+    };
     return {
       defaults,
       titles,
+      current,
+      select,
     };
   },
 };
@@ -58,7 +72,7 @@ $border-color: #d9d9d9;
         margin-left: 0;
       }
       &.selected {
-        color: $blue;
+        color: #40a9ff;
       }
     }
   }
