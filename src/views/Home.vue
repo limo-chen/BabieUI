@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #ffffff;
+$pink: #fd4973;
+$border-radius: 4px;
 .topnavAndBanner {
   background: linear-gradient(
     144deg,
@@ -30,6 +33,7 @@ export default {
   );
 }
 .banner {
+  color: $color;
   padding: 100px 0;
   display: flex;
   justify-content: center;
@@ -39,14 +43,15 @@ export default {
   > .actions {
     padding: 8px 0;
     a {
+      color: white;
       margin: 0 8px;
-      background: #fff;
+      background: $pink;
       display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: $h/2;
-      padding: 0 8px;
+      border-radius: $border-radius;
+      padding: 8px 24px;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
