@@ -1,6 +1,10 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleMenu">LOGO</div>
+    <div class="logo" @click="toggleMenu">
+      <svg class="icon">
+        <use xlink:href="#icon-barbie"></use>
+      </svg>
+    </div>
     <div class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -37,6 +41,10 @@ $color: #ffffff;
   > .logo {
     min-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 45px;
+      height: 45px;
+    }
   }
   > .menu {
     display: flex;

@@ -1,13 +1,26 @@
 <template>
-  <div class="topnavAndBanner">
-    <Topnav />
-    <div class="banner">
-      <h1>BarbieUI</h1>
-      <h2>一个厉害的 UI 框架</h2>
-      <p class="actions">
-        <a href="https://github.com/limo-chen/BabieUI">Github</a>
-        <router-link to="/doc">开始</router-link>
-      </p>
+  <div>
+    <div class="topnavAndBanner">
+      <Topnav />
+      <div class="banner">
+        <h1>BarbieUI</h1>
+        <h2>一个厉害的 UI 框架</h2>
+        <p class="actions">
+          <a href="https://github.com/limo-chen/BabieUI">Github</a>
+          <router-link to="/doc">开始</router-link>
+        </p>
+      </div>
+    </div>
+    <div class="features">
+      <svg class="icon">
+        <use xlink:href="#icon-ts"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-light"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-vue"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -31,6 +44,12 @@ $border-radius: 4px;
     rgba(254, 208, 224, 1) 0%,
     rgba(255, 93, 156, 1) 100%
   );
+}
+.features {
+  > svg {
+    width: 45px;
+    height: 45px;
+  }
 }
 .banner {
   color: $color;
