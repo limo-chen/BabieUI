@@ -44,6 +44,7 @@ $border-radius: 4px;
     rgba(254, 208, 224, 1) 0%,
     rgba(255, 93, 156, 1) 100%
   );
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
   > svg {
