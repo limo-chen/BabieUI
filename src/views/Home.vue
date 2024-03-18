@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
       <h1>BarbieUI</h1>
@@ -22,15 +22,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topnavAndBanner {
+  background: linear-gradient(
+    144deg,
+    rgba(254, 208, 224, 1) 0%,
+    rgba(255, 93, 156, 1) 100%
+  );
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #39b2e1;
+
   > .actions {
-    padding: 6px 0;
+    padding: 8px 0;
     a {
       margin: 0 8px;
       background: #fff;
